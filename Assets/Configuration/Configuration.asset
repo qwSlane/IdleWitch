@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6043b2027a2e34aa38bcfdeab18704, type: 3}
+  m_Name: Configuration
+  m_EditorClassIdentifier: 
+  Radius: 10
+  PointsCount: 8
+  CurrentGeneration: 0
+  GlyphPrefab: {fileID: 3319101987144226778, guid: 36e82fad341ce5d41a9a7a036074ff83, type: 3}
