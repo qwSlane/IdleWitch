@@ -1,10 +1,12 @@
 using Leopotam.EcsLite;
 using Leopotam.EcsLite.Di;
+using Leopotam.EcsLite.ExtendedSystems;
 using UnityEngine;
-using Witch.Services;
+using Witch.Components;
+using Witch.StaticData;
 using Witch.Systems;
 
-namespace Witch.Foundation {
+namespace Witch {
     sealed class EcsStartup : MonoBehaviour {
         EcsWorld _world;        
         IEcsSystems _systems;
@@ -14,13 +16,18 @@ namespace Witch.Foundation {
 
         void Start () {
             _world = new EcsWorld ();
+            
+            //services initialization
+            
+
             _systems = new EcsSystems (_world);
             _systems
                 // register your systems here, for example:
                 .Add (new InputSystem())
-                .Add(new GlyphPositionSystem())
-                .Add (new CreateGlyphViewSystem())
-                
+                .Add(new CreateGlyphViewSystem())
+                .DelHere<Glyph>()
+                .Add(new DisappearGlyphsSystem())
+
                 // register additional worlds here, for example:
                 // .AddWorld (new EcsWorld (), "events")
 #if UNITY_EDITOR

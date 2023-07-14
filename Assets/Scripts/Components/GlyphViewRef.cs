@@ -1,4 +1,4 @@
-namespace Witch.Systems
+namespace Witch.Components
 {
     public struct GlyphViewRef
     {

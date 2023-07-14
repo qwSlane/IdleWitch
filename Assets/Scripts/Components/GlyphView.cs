@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Witch.Systems
+namespace Witch.Components
 {
     public class GlyphView : MonoBehaviour
     {
