@@ -1,11 +1,10 @@
 using UnityEngine;
 
-namespace Witch.Systems
+namespace Witch.Components
 {
     public struct Glyph
     {
         public int Number;
-        public Vector3 Position;
     }
 
     public enum GlyphGeneration

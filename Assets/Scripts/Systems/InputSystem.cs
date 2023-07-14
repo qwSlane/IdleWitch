@@ -1,7 +1,8 @@
 ﻿using Leopotam.EcsLite;
 using Leopotam.EcsLite.Di;
 using UnityEngine;
-using Witch.Services;
+using Witch.Components;
+using Witch.StaticData;
 
 namespace Witch.Systems
 {
@@ -9,32 +10,34 @@ namespace Witch.Systems
     {
         private readonly EcsWorldInject _world;
         private readonly EcsPoolInject<Glyph> _glyphPool;
-        private readonly EcsPoolInject<GlyphsOverflow> _overflowPool;
-        private readonly EcsPoolInject<GlyphViewRef> _glyphRefPool;
+        private readonly EcsPoolInject<Disappearing> _disappearPool;
 
-        private readonly EcsCustomInject<Configuration> _configuration;
+        private readonly EcsFilterInject<Inc<GlyphViewRef>, Exc<Vanished, Disappearing>> _glyphRefPool;
+        
         private readonly EcsCustomInject<SceneData> _sceneData;
 
         public void Run(IEcsSystems systems)
         {
             if (Input.GetMouseButtonDown(0))
             {
-                var entity = _world.Value.NewEntity();
-                
-                if (_sceneData.Value.Glyphs == _configuration.Value.PointsCount)
+                if (++_sceneData.Value.Сircle.GlyphsCount == _sceneData.Value.Сircle.CircleSize)
                 {
-                    _overflowPool.Value.Add(entity);
+                    foreach (var glyph in _glyphRefPool.Value)
+                    {
+                        _disappearPool.Value.Add(glyph);
+                    }
+                    _sceneData.Value.Сircle.GlyphsCount = -1;
                 }
                 else
                 {
+                    var entity = _world.Value.NewEntity();
                     _glyphPool.Value.Add(entity);
+                    ref Glyph glyph = ref _glyphPool.Value.Get(entity);
+
+                    glyph.Number = _sceneData.Value.Сircle.GlyphsCount;
                 }
 
             }
         }
-    }
-
-    public struct GlyphsOverflow
-    {
     }
 }

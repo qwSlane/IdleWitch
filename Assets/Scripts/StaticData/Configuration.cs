@@ -1,14 +1,11 @@
 using UnityEngine;
-using Witch.Systems;
+using Witch.Components;
 
-namespace Witch
+namespace Witch.StaticData
 {
     [CreateAssetMenu]
     public class Configuration : ScriptableObject
     {
-        public int Radius;
-        public int PointsCount;
-
         public GlyphGeneration CurrentGeneration;
         
         public GlyphView GlyphPrefab;

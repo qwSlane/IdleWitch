@@ -123,6 +123,54 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &181480148
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 181480149}
+  - component: {fileID: 181480150}
+  m_Layer: 0
+  m_Name: MainCircle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &181480149
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181480148}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1142503048}
+  m_Father: {fileID: 1537852505}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &181480150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181480148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f95e86ab33848cd8edc91c95aa36bbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Centre: {fileID: 1142503048}
+  CircleSize: 9
+  GlyphsCount: -1
 --- !u!1 &548066536
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,7 +328,7 @@ Transform:
   m_GameObject: {fileID: 833331264}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 1, z: 10}
+  m_LocalScale: {x: 5, y: 1, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1537852505}
@@ -401,7 +449,7 @@ Camera:
     height: 1
   near clip plane: 1
   far clip plane: 200
-  field of view: 60
+  field of view: 53
   orthographic: 0
   orthographic size: 40
   m_Depth: -1
@@ -427,7 +475,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.5, y: -0, z: -0, w: 0.8660254}
-  m_LocalPosition: {x: 0, y: 30.9, z: -15.7}
+  m_LocalPosition: {x: 0, y: 80, z: -44.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -483,17 +531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135af42020074852bc8bcf837dcbf586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glyphCenter: {fileID: 1142503048}
-  Glyphs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  CurrentGlyph: 0
+  "\u0421ircle": {fileID: 181480150}
 --- !u!1 &1537852504
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,7 +561,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 833331265}
-  - {fileID: 1142503048}
+  - {fileID: 181480149}
   m_Father: {fileID: 548066537}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -578,11 +616,23 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1537852505}
+    m_TransformParent: {fileID: 181480149}
     m_Modifications:
     - target: {fileID: 4187644272254131347, guid: 36e82fad341ce5d41a9a7a036074ff83, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187644272254131347, guid: 36e82fad341ce5d41a9a7a036074ff83, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187644272254131347, guid: 36e82fad341ce5d41a9a7a036074ff83, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187644272254131347, guid: 36e82fad341ce5d41a9a7a036074ff83, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4187644272254131347, guid: 36e82fad341ce5d41a9a7a036074ff83, type: 3}
       propertyPath: m_LocalPosition.x
